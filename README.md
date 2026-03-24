@@ -88,4 +88,39 @@ A lightweight proof-of-concept deployment script is also included for Raspberry 
 
 This script is provided as a deployment demo and is not required to reproduce the main training pipeline.
 
+## Installation
+
+It is recommended to use a clean Python environment.
+
+### Create a virtual environment
+
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+### On Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## Experimental Environment
+
+The main experimental environment used in the study includes:
+
+- Python 3.10.18
+- OpenCV 4.7.0.68
+- PyTorch 2.6.0+cu124
+- Torchvision 0.21.1
+- Ultralytics 8.3.176
+- CUDA 12.4
+
+Depending on your setup, you may need to adapt the installed PyTorch build to your CUDA or CPU environment.
 
