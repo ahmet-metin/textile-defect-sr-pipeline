@@ -43,6 +43,7 @@ textile-defect-sr-pipeline/
 │   │   ├── train_esrgan.py
 │   │   └── utils.py
 │   ├── pipeline/
+│   │   ├── prepare_patches.py
 │   │   └── tile_images.py
 │   └── yolo/
 │       ├── custom_data_seg.yaml
@@ -68,6 +69,7 @@ The ESRGAN module is used to enhance low-resolution textile images before inspec
 The enhanced images are divided into fixed-size non-overlapping local patches for downstream processing.
 
 **Relevant file:**
+- `src/pipeline/prepare_patches.py`
 - `src/pipeline/tile_images.py`
 
 ### 3. YOLOv8-seg Defect Detection and Segmentation
