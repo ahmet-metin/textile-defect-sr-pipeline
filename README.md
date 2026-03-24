@@ -124,3 +124,166 @@ The main experimental environment used in the study includes:
 
 Depending on your setup, you may need to adapt the installed PyTorch build to your CUDA or CPU environment.
 
+## Data
+
+This repository contains the code for the proposed pipeline.  
+The datasets used in this study come from both public and custom sources.
+
+### Public dataset
+
+The TILDA fabric dataset used in this work was obtained from its original public source:
+
+- [TILDA Fabric Dataset on Roboflow Universe](https://universe.roboflow.com/irvin-andersen/tilda-fabric)
+
+Due to third-party ownership and licensing considerations, the TILDA dataset is **not redistributed** in this repository. Please access it from the original source.
+
+### Custom dataset
+
+In addition to public data, this study also uses custom-generated textile defect images and annotations produced during the experimental workflow.
+
+If shared publicly, the custom dataset and related annotations should be provided through a persistent repository such as **Zenodo**.
+
+You can later replace the placeholder below with the actual link:
+
+- Custom dataset and annotations: **[Zenodo link will be added here]**
+
+### Dataset configuration
+
+The YOLO segmentation dataset paths are defined in:
+
+```text
+src/yolo/custom_data_seg.yaml
+```
+
+Please update dataset paths according to your local environment if needed.
+
+---
+
+## Weights
+
+This repository can be used together with pretrained model weights for easier reproducibility.
+
+Recommended weights to share:
+
+- ESRGAN generator checkpoint used in the main experiments
+- optional lightweight ESRGAN generator checkpoint used for Raspberry Pi experiments
+- YOLOv8-seg best weights
+
+You can later replace the placeholders below with actual links:
+
+- ESRGAN generator weights: **[link will be added here]**
+- Raspberry Pi ESRGAN weights: **[link will be added here]**
+- YOLOv8-seg weights: **[link will be added here]**
+
+If file sizes are large, it is recommended to share weights through **Zenodo** or **GitHub Releases** instead of committing them directly into the repository.
+
+---
+
+## Training
+
+### Train ESRGAN
+
+Edit the training configuration file:
+
+```text
+configs/esrgan_train.yaml
+```
+
+Then run:
+
+```bash
+python src/esrgan/train_esrgan.py
+```
+
+### Train YOLOv8-seg
+
+```bash
+python src/yolo/train_yolo_seg.py
+```
+
+---
+
+## Inference
+
+### Run ESRGAN inference
+
+```bash
+python src/esrgan/infer_esrgan.py
+```
+
+### Run YOLOv8-seg inference
+
+```bash
+python src/yolo/infer_yolo_seg.py
+```
+
+---
+
+## Tiling / Patch Generation
+
+The proposed pipeline uses fixed-size non-overlapping local patches for patch-based analysis.
+
+Example utility:
+
+```bash
+python src/pipeline/tile_images.py
+```
+
+Please update input/output paths in the script if needed.
+
+---
+
+## Raspberry Pi Demo
+
+The repository also includes a lightweight proof-of-concept deployment script for Raspberry Pi-oriented experiments:
+
+```text
+src/edge/rpi_demo.py
+```
+
+This script is intended as an edge deployment demo and is **not required** to reproduce the main training pipeline.
+
+---
+
+## Reproducibility Notes
+
+To improve reproducibility:
+
+- keep dataset paths configurable,
+- preserve the model checkpoints used in the experiments,
+- document whether inference is performed with pretrained weights or retrained models,
+- report hardware details when comparing runtime,
+- use the same image size and preprocessing settings described in the manuscript.
+
+---
+
+## Manuscript Relation
+
+This repository is directly related to the manuscript:
+
+**Real-Time Textile Defect Inspection: A Lightweight Super-Resolution Augmented Detection Pipeline**
+
+If you use this repository, please cite the related manuscript.
+
+---
+
+## Citation
+
+You can update this section after the manuscript is accepted or a DOI / preprint link becomes available.
+
+### Placeholder citation
+
+```bibtex
+@article{metin2025textile,
+  title={Real-Time Textile Defect Inspection: A Lightweight Super-Resolution Augmented Detection Pipeline},
+  author={Metin, Ahmet and Ozkan, Haydar},
+  journal={Under review},
+  year={2025}
+}
+```
+
+---
+
+## License
+
+This project is released under the MIT License. See the `LICENSE` file for details.
