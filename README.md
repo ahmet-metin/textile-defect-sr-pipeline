@@ -137,15 +137,22 @@ The TILDA fabric dataset used in this work was obtained from its original public
 
 Due to third-party ownership and licensing considerations, the TILDA dataset is **not redistributed** in this repository. Please access it from the original source.
 
-### Custom dataset
+### Custom dataset and experimental package
 
-In addition to public data, this study also uses custom-generated textile defect images and annotations produced during the experimental workflow.
+In addition to public data, this study also uses custom-generated textile defect annotations, generator weights, and processed experimental data produced during the workflow.
 
-If shared publicly, the custom dataset and related annotations should be provided through a persistent repository such as **Zenodo**.
+The complete experimental package is publicly available on Zenodo:
 
-You can later replace the placeholder below with the actual link:
+- **Zenodo DOI:** [10.5281/zenodo.19207904](https://doi.org/10.5281/zenodo.19207904)
 
-- Custom dataset and annotations: **[Zenodo link will be added here]**
+This Zenodo record contains the following files:
+
+- `custom_dataset_annotations.zip`: custom-generated annotations and related experimental metadata used in this study.
+- `generator_weights.zip`: ESRGAN generator checkpoints for both baseline convolution-based and depthwise-separable-convolution-based model variants.
+- `tilda_train_test_yolo_tiling.zip`: processed TILDA-based experimental data used in this work, including ESRGAN train/test subsets and YOLO tiling data prepared for downstream detection and segmentation experiments.
+- `sr_outputs.zip`: 4× super-resolved output images generated during the experiments for visual comparison and qualitative assessment.
+
+The original public TILDA dataset was obtained from its original public source and is not redistributed here as a raw standalone dataset. This Zenodo record provides the processed experimental data structure used in the reported pipeline.
 
 ### Dataset configuration
 
@@ -161,21 +168,20 @@ Please update dataset paths according to your local environment if needed.
 
 ## Weights
 
-This repository can be used together with pretrained model weights for easier reproducibility.
+The pretrained generator weights used in this study are included in the Zenodo record above:
 
-Recommended weights to share:
+- **Zenodo DOI:** [10.5281/zenodo.19207904](https://doi.org/10.5281/zenodo.19207904)
 
-- ESRGAN generator checkpoint used in the main experiments
-- optional lightweight ESRGAN generator checkpoint used for Raspberry Pi experiments
-- YOLOv8-seg best weights
+The weight package includes:
 
-You can later replace the placeholders below with actual links:
+- baseline convolution-based ESRGAN generator checkpoints
+- depthwise-separable-convolution-based ESRGAN generator checkpoints
 
-- ESRGAN generator weights: **[link will be added here]**
-- Raspberry Pi ESRGAN weights: **[link will be added here]**
-- YOLOv8-seg weights: **[link will be added here]**
+These files are distributed as part of:
 
-If file sizes are large, it is recommended to share weights through **Zenodo** or **GitHub Releases** instead of committing them directly into the repository.
+- `generator_weights.zip`
+
+If needed, additional model files such as YOLOv8-seg weights can also be shared through Zenodo or GitHub Releases instead of committing them directly into this repository.
 
 ---
 
