@@ -1,0 +1,20 @@
+data_root: sample_data/esrgan/train
+test_dir: sample_data/esrgan/test
+output_dir: outputs/esrgan_results
+
+checkpoint_dir: weights/esrgan
+checkpoint_gen: weights/esrgan/gen_latest.pth.tar
+checkpoint_disc: weights/esrgan/disc_latest.pth.tar
+
+load_model: false
+save_model: true
+
+high_res: 416
+batch_size: 8
+num_epochs: 100
+learning_rate: 0.0001
+lambda_gp: 10.0
+num_workers: 0
+
+num_channels: 64
+num_blocks: 23
