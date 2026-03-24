@@ -48,7 +48,7 @@ textile-defect-sr-pipeline/
 │       ├── custom_data_seg.yaml
 │       ├── infer_yolo_seg.py
 │       └── train_yolo_seg.py
-```text
+```
 
 ## Main Components
 
