@@ -48,3 +48,43 @@ textile-defect-sr-pipeline/
 │       ├── custom_data_seg.yaml
 │       ├── infer_yolo_seg.py
 │       └── train_yolo_seg.py
+
+## Main Components
+
+### 1. ESRGAN-based Super-Resolution
+
+The ESRGAN module is used to enhance low-resolution textile images before inspection.
+
+**Relevant files:**
+- `src/esrgan/model.py`
+- `src/esrgan/losses.py`
+- `src/esrgan/dataset.py`
+- `src/esrgan/train_esrgan.py`
+- `src/esrgan/infer_esrgan.py`
+
+### 2. Patch-Based / Tile-Based Analysis
+
+The enhanced images are divided into fixed-size non-overlapping local patches for downstream processing.
+
+**Relevant file:**
+- `src/pipeline/tile_images.py`
+
+### 3. YOLOv8-seg Defect Detection and Segmentation
+
+Tile-level defect detection and segmentation are performed using YOLOv8-seg.
+
+**Relevant files:**
+- `src/yolo/train_yolo_seg.py`
+- `src/yolo/infer_yolo_seg.py`
+- `src/yolo/custom_data_seg.yaml`
+
+### 4. Edge / Raspberry Pi Demo
+
+A lightweight proof-of-concept deployment script is also included for Raspberry Pi-oriented experiments.
+
+**Relevant file:**
+- `src/edge/rpi_demo.py`
+
+This script is provided as a deployment demo and is not required to reproduce the main training pipeline.
+
+
