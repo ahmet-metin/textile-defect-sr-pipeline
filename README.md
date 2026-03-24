@@ -148,7 +148,7 @@ The complete experimental package is publicly available on Zenodo:
 This Zenodo record contains the following files:
 
 - `custom_dataset_annotations.zip`: custom-generated annotations and related experimental metadata used in this study.
-- `generator_weights.zip`: ESRGAN generator checkpoints for both baseline convolution-based and depthwise-separable-convolution-based model variants.
+- `generator_weights.zip`: ESRGAN generator checkpoints for both the baseline convolution-based architecture and the lightweight depthwise-separable-convolution-based variants developed for the proposed real-time textile defect inspection pipeline.
 - `tilda_train_test_yolo_tiling.zip`: processed TILDA-based experimental data used in this work, including ESRGAN train/test subsets and YOLO tiling data prepared for downstream detection and segmentation experiments.
 - `sr_outputs.zip`: 4× super-resolved output images generated during the experiments for visual comparison and qualitative assessment.
 
@@ -175,7 +175,7 @@ The pretrained generator weights used in this study are included in the Zenodo r
 The weight package includes:
 
 - baseline convolution-based ESRGAN generator checkpoints
-- depthwise-separable-convolution-based ESRGAN generator checkpoints
+- lightweight depthwise-separable-convolution-based ESRGAN generator checkpoints
 
 These files are distributed as part of:
 
